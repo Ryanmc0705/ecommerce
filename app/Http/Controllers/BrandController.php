@@ -73,7 +73,7 @@ class BrandController extends Controller
      */
     public function show($company_id)
     {
-        $brands = Company::findOrFail($company_id)->Brand()->get(["name","id","image","created_at"]);
+        $brands = Company::findOrFail($company_id)->Brand()->get(["name","id","image"]);
         return response()->json([
             "brands" => $brands
         ]);
